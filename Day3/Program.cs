@@ -109,22 +109,20 @@ namespace Day3
             }
             Console.WriteLine();
 
-
-
-
-
-
+            
 
             // USING LINQ
             Console.WriteLine("*****************************************************USING LINQ********************************************************");
-           
 
+            var getUserDetails = from users in user
+                                 select users;
 
             // USER DETAILS
             Console.WriteLine();
             Console.WriteLine("Users Details:- ");
             Console.WriteLine("Id \t Name \t Email \t \t \tLocation \tAddress\t\tActiveStatus");
-            foreach (User users in user)
+
+            foreach (User users in getUserDetails)
             {
                 Console.WriteLine(users.id + "\t" + users.name + "\t" + users.email + "\t" + users.location + "\t" + users.address + "\t  " + users.isActive);
             }
